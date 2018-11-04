@@ -7,7 +7,7 @@ buildscript {
     }
     dependencies {
         classpath 'mysql:mysql-connector-java:8.0.13'
-        classpath 'org.flywaydb:flyway-gradle-plugin:3.2.1'
+        classpath 'org.flywaydb:flyway-gradle-plugin:5.2.1'
     }
 }
 
