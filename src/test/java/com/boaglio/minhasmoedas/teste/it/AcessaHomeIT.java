@@ -16,9 +16,9 @@ public class AcessaHomeIT extends SeleniumTest {
 		WebDriver driver = getDriver();
 		driver.get(Site.host.value());
 
-		Assert.assertTrue(driver.getPageSource().contains(
-				Site.homeTitle.value()));
+		Assert.assertTrue(driver.getPageSource().contains(Site.homeTitle.value()));
 
+		System.out.println("Tirando screenshot...");
 		SeleniumUtils.tiraScreenshot(this.getClass().getSimpleName(), driver);
 
 		driver.quit();

@@ -9,20 +9,16 @@ import com.boaglio.minhasmoedas.teste.core.SeleniumTest;
 import com.boaglio.minhasmoedas.teste.core.SeleniumUtils;
 import com.boaglio.minhasmoedas.teste.core.Site;
 
-public class LoginBoaglioHomeIT  extends SeleniumTest  {
+public class CambioHomeIT  extends SeleniumTest  {
 
 	@Test
 	public void testaTitle() {
 
 		WebDriver driver = getDriver();
-		driver.get(Site.host.value()+Site.login.value());
+		driver.get(Site.host.value()+Site.cambio.value());
 
 		Assert.assertTrue(driver.getPageSource().contains(
 				Site.homeTitle.value()));
-
-	    driver.findElement(By.id("username")).sendKeys(Site.user.value());
-		driver.findElement(By.id("password")).sendKeys(Site.password.value());
-		driver.findElement(By.className("btn")).submit();
 
 		try {
 			Thread.sleep(2000);
@@ -30,8 +26,8 @@ public class LoginBoaglioHomeIT  extends SeleniumTest  {
 			e.printStackTrace();
 		}
 
-		Assert.assertTrue(driver.getPageSource().contains(
-				Site.loginWelcome .value()));
+		Assert.assertTrue(driver.getPageSource().contains(Site.cambioValidation1.value()));
+		Assert.assertTrue(driver.getPageSource().contains(Site.cambioValidation2.value()));
 
 		SeleniumUtils.tiraScreenshot(this.getClass().getSimpleName(), driver);
 
