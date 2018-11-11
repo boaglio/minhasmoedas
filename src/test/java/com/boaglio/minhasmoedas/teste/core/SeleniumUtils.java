@@ -18,10 +18,11 @@ public class SeleniumUtils {
 	private static String workingDir = getDir();
 
 
-	public static String site = System.getenv("SITE");
+	public static String site;
 
 	static {
 		 workingDir = getDir();
+		 site = System.getProperty("SITE");
 		 if (site==null) {
 			 site = Site.host.value();
 		 }
