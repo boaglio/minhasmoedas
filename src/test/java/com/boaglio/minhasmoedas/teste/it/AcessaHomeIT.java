@@ -4,17 +4,17 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 
-import com.boaglio.minhasmoedas.teste.core.SeleniumTest;
+import com.boaglio.minhasmoedas.teste.core.AbstractSelenium;
 import com.boaglio.minhasmoedas.teste.core.SeleniumUtils;
 import com.boaglio.minhasmoedas.teste.core.Site;
 
-public class AcessaHomeIT extends SeleniumTest {
+public class AcessaHomeIT extends AbstractSelenium {
 
 	@Test
 	public void testaTitle() {
 
 		WebDriver driver = getDriver();
-		driver.get(Site.host.value());
+		driver.get(SeleniumUtils.site);
 
 		Assert.assertTrue(driver.getPageSource().contains(Site.homeTitle.value()));
 

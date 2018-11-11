@@ -1,11 +1,10 @@
 package com.boaglio.minhasmoedas.teste.core;
 
-import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
-public class SeleniumTest {
+public abstract class AbstractSelenium {
 
 	private static final String PARAMETRO_WEB_BROWSER = "webBrowser";
 
@@ -13,7 +12,6 @@ public class SeleniumTest {
 
 	private static boolean isInternetExplorer;
 
-	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		String webBrowser = System.getProperty(PARAMETRO_WEB_BROWSER);
 

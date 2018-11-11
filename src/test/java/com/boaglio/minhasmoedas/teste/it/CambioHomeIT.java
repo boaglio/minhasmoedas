@@ -5,17 +5,17 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import com.boaglio.minhasmoedas.teste.core.SeleniumTest;
+import com.boaglio.minhasmoedas.teste.core.AbstractSelenium;
 import com.boaglio.minhasmoedas.teste.core.SeleniumUtils;
 import com.boaglio.minhasmoedas.teste.core.Site;
 
-public class CambioHomeIT  extends SeleniumTest  {
+public class CambioHomeIT  extends AbstractSelenium  {
 
 	@Test
 	public void testaTitle() {
 
 		WebDriver driver = getDriver();
-		driver.get(Site.host.value()+Site.cambio.value());
+		driver.get(SeleniumUtils.site+Site.cambio.value());
 
 		Assert.assertTrue(driver.getPageSource().contains(
 				Site.homeTitle.value()));
