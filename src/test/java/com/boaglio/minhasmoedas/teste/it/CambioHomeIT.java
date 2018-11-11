@@ -15,7 +15,11 @@ public class CambioHomeIT  extends AbstractSelenium  {
 	public void testaTitle() {
 
 		WebDriver driver = getDriver();
-		driver.get(SeleniumUtils.site+Site.cambio.value());
+		String url = SeleniumUtils.site+Site.cambio.value();
+
+		System.out.println("Testando "+url);
+
+		driver.get(url);
 
 		Assert.assertTrue(driver.getPageSource().contains(
 				Site.homeTitle.value()));

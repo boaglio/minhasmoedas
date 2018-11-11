@@ -14,6 +14,8 @@ public class AcessaHomeIT extends AbstractSelenium {
 	public void testaTitle() {
 
 		WebDriver driver = getDriver();
+
+		System.out.println("Testando "+SeleniumUtils.site);
 		driver.get(SeleniumUtils.site);
 
 		Assert.assertTrue(driver.getPageSource().contains(Site.homeTitle.value()));
